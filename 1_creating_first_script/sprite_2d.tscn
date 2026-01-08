@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b7im7vxrk4ryt"]
 
 [ext_resource type="Texture2D" uid="uid://jwe2urkbcxdp" path="res://icon.svg" id="1_mehiu"]
-[ext_resource type="Script" uid="uid://b77l5sta2ksro" path="res://sprite_2d.gd" id="2_lt4yx"]
+[ext_resource type="Script" uid="uid://b77l5sta2ksro" path="res://1_creating_first_script/sprite_2d.gd" id="2_lt4yx"]
 
 [node name="Sprite2D" type="Sprite2D"]
 texture = ExtResource("1_mehiu")

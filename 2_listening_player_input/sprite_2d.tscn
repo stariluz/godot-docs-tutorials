@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cet7y6s8lipth"]
+
+[ext_resource type="Texture2D" uid="uid://jwe2urkbcxdp" path="res://icon.svg" id="1_xjn25"]
+[ext_resource type="Script" uid="uid://c6r88ip7gq70h" path="res://2_listening_player_input/tank_movement.gd" id="2_xc62l"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_xjn25")
+script = ExtResource("2_xc62l")
