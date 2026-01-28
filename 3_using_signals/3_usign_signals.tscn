@@ -1,16 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2kuue0swlvxw"]
+[gd_scene format=3 uid="uid://c2kuue0swlvxw"]
 
 [ext_resource type="PackedScene" uid="uid://teknatl2txkv" path="res://3_using_signals/sprite_2d.tscn" id="1_db3yn"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=87353464]
 
-[node name="Sprite2D" parent="." instance=ExtResource("1_db3yn")]
+[node name="Sprite2D" parent="." unique_id=2113567408 instance=ExtResource("1_db3yn")]
 position = Vector2(577, 285)
 
-[node name="Timer" type="Timer" parent="Sprite2D"]
+[node name="Timer" type="Timer" parent="Sprite2D" unique_id=297454228]
 autostart = true
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=1962199251]
 offset_left = 502.0
 offset_top = 536.0
 offset_right = 666.0
