@@ -2,6 +2,9 @@
 .godot/
 /android/
 
+# Builds
+builds/
+
 # Ignore original unused dodge_the_creeps_2d_assets
 */dodge_the_creeps_2d_assets.zip
 */dodge_the_creeps_2d_assets/art/enemyFlyingAlt_1.png

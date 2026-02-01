@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bxylv606pknop"]
+
+[ext_resource type="Script" uid="uid://dc22h24lp0dok" path="res://4_creating_first_2d_game/scripts/mob.gd" id="1_ihakh"]
+[ext_resource type="SpriteFrames" uid="uid://ci0fu6p2wwkei" path="res://4_creating_first_2d_game/animations/mobs.tres" id="1_vtrj1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vtrj1"]
+radius = 35.0
+height = 92.0
+
+[node name="Mob" type="RigidBody2D" unique_id=1313942724 groups=["mobs"]]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_ihakh")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=455348255]
+scale = Vector2(0.75, 0.75)
+sprite_frames = ExtResource("1_vtrj1")
+animation = &"walk"
+frame = 1
+frame_progress = 0.47083354
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1057765293]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_vtrj1")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1140195323]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

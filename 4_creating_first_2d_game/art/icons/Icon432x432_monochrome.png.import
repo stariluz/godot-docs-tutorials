@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq7usldgbpoj4"
-path="res://.godot/imported/enemyFlying2Alt_2.png-45b46d4cc09fd9f7e25077d426b4c53a.ctex"
+uid="uid://drh85opbt87h2"
+path="res://.godot/imported/Icon432x432_monochrome.png-17cdbcb4131aafec3b6dfad76f4e970a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://4_creating_first_2d_game/dodge_the_creeps_2d_assets/art/enemyFlying2Alt_2.png"
-dest_files=["res://.godot/imported/enemyFlying2Alt_2.png-45b46d4cc09fd9f7e25077d426b4c53a.ctex"]
+source_file="res://4_creating_first_2d_game/art/icons/Icon432x432_monochrome.png"
+dest_files=["res://.godot/imported/Icon432x432_monochrome.png-17cdbcb4131aafec3b6dfad76f4e970a.ctex"]
 
 [params]
 
