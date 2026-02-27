@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://kabjpqt7myli"]
+
+[ext_resource type="Texture2D" uid="uid://bji3otycivydi" path="res://4_creating_first_2d_game/art/ui/joystick_background_01.png" id="1_6eh38"]
+[ext_resource type="Script" uid="uid://dhg2wkcoscao0" path="res://4_creating_first_2d_game/scripts/controls/virtual_joystick.gd" id="1_qb7xt"]
+[ext_resource type="Texture2D" uid="uid://b7xg5d8t4tfs5" path="res://4_creating_first_2d_game/art/ui/joystick_foreground_01.png" id="2_qb7xt"]
+
+[node name="VirtualJoystick" type="Control" unique_id=1054392870]
+layout_mode = 3
+anchors_preset = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_qb7xt")
+stick_max_radius = 64.0
+
+[node name="Background" type="TextureRect" parent="." unique_id=409190574]
+modulate = Color(1, 1, 1, 0.49803922)
+layout_mode = 1
+anchors_preset = -1
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("1_6eh38")
+stretch_mode = 2
+
+[node name="Stick" type="TextureRect" parent="Background" unique_id=157976922]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_qb7xt")

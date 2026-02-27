@@ -15,16 +15,16 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Godot First Script"
-run/main_scene="uid://lsrf7sdhu3ov"
+run/main_scene="uid://nsfo7jpdhooe"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://c8ybp4soplnni"
 
 [display]
 
 window/size/viewport_width=480
-window/size/viewport_height=720
-window/size/mode=3
-window/stretch/mode="canvas_items"
+window/size/viewport_height=980
+window/size/mode=2
+window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 window/handheld/orientation=1
 

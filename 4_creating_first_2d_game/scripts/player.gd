@@ -5,8 +5,7 @@ signal hit
 @export var speed:int = 400
 
 var screen_size:Vector2
-var touch_is_down = false
-var touch_target
+var is_mobile=OS.has_feature("mobile")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,36 +17,23 @@ func start(pos:Vector2):
 	show()
 	$CollisionShape2D.disabled=false
 
-func _input(event):
-	if event is InputEventScreenTouch:
-		if event.pressed:
-			touch_is_down = true
-			touch_target = event.position
-		elif event.released:
-			touch_is_down = false
-	elif event is InputEventScreenDrag:
-		touch_target = event.position
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var velocity:Vector2=Vector2.ZERO
-	if(Input.is_action_pressed("move_right")):
-		velocity.x+=1
-	if(Input.is_action_pressed("move_left")):
-		velocity.x-=1
-	if(Input.is_action_pressed("move_up")):
-		velocity.y-=1
-	if(Input.is_action_pressed("move_down")):
-		velocity.y+=1
-
+	if is_mobile:
+		var joystick:VirtualJoystick=get_tree().current_scene.get_node("VirtualJoystick")
+		if joystick:
+			velocity=joystick.value
+		else:
+			print_debug("Missing VirtualJoystick in scene")
+	else:
+		velocity=native_value()
+		
 	if velocity.length() > 0:
-		velocity=velocity.normalized()*speed
+		velocity*=speed
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
-	
-	if touch_is_down and position.distance_to(touch_target) > 5:
-		velocity = touch_target - position
 	
 	position += velocity*delta
 	position = position.clamp(Vector2.ZERO, screen_size)
@@ -59,8 +45,21 @@ func _process(delta: float) -> void:
 	elif velocity.y!=0:
 		$AnimatedSprite2D.animation="up"
 		$AnimatedSprite2D.flip_v=velocity.y>0
-
+	
 func _on_body_entered(_body: Node2D) -> void:
 	hide()
 	hit.emit()
 	$CollisionShape2D.set_deferred("disabled", true)
+
+
+func native_value()->Vector2:
+	var value:Vector2=Vector2.ZERO
+	if(Input.is_action_pressed("move_right")):
+		value.x+=1
+	if(Input.is_action_pressed("move_left")):
+		value.x-=1
+	if(Input.is_action_pressed("move_up")):
+		value.y-=1
+	if(Input.is_action_pressed("move_down")):
+		value.y+=1
+	return value.normalized()

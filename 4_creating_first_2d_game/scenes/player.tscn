@@ -9,6 +9,7 @@ height = 68.0
 
 [node name="Player" type="Area2D" unique_id=892126785]
 script = ExtResource("1_2gvt5")
+speed = null
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1855689581]

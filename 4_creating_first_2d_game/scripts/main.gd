@@ -3,7 +3,13 @@ extends Node
 @export var mob_scene: PackedScene
 @export var mobs_container: Node
 var score: int
+var is_mobile=OS.has_feature("mobile")
 
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	if not is_mobile:
+		$VirtualJoystick.queue_free()
+	
 func new_game():
 	get_tree().call_group("mobs", "queue_free")
 	

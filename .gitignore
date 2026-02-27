@@ -4,6 +4,7 @@
 
 # Builds
 builds/
+concept_tests/
 
 # Ignore original unused dodge_the_creeps_2d_assets
 */dodge_the_creeps_2d_assets.zip
