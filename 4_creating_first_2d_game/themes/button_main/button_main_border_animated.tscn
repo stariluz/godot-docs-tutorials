@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://blqmnmtn8g1ua"]
+
+[ext_resource type="Texture2D" uid="uid://b4qu6scikqwco" path="res://4_creating_first_2d_game/art/ui/button_border_white_128x128_00.png" id="1_gk7md"]
+[ext_resource type="Script" uid="uid://d4nfkgai6nvot" path="res://addons/animatedtexturerect/animated_texture_rect.gd" id="2_0hgul"]
+[ext_resource type="Texture2D" uid="uid://blc55edc82jo6" path="res://4_creating_first_2d_game/art/ui/button_border_white_128x128_01.png" id="3_lvlgk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j7pes"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gk7md")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lvlgk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ButtonMainBorderAnimated" type="NinePatchRect" unique_id=821983213]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gk7md")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+script = ExtResource("2_0hgul")
+sprite_frames = SubResource("SpriteFrames_j7pes")
+animation = "default"
+metadata/_custom_type_script = "uid://d4nfkgai6nvot"

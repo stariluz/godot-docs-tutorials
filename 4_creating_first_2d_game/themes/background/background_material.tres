@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://brkwuvoqbg4lm"]
+
+[ext_resource type="Shader" uid="uid://b16rue0akmcx1" path="res://4_creating_first_2d_game/themes/background/background_shader.tres" id="1_x88sk"]
+[ext_resource type="Texture2D" uid="uid://byfsbklwbnenr" path="res://4_creating_first_2d_game/art/bg/bg1080x2400_background.png" id="2_s3t15"]
+[ext_resource type="Texture2D" uid="uid://b4cyqujuhit1u" path="res://4_creating_first_2d_game/art/bg/bg1080x2400_anim3_vertical.png" id="3_aw48p"]
+
+[resource]
+shader = ExtResource("1_x88sk")
+shader_parameter/direction = Vector2(0, 1)
+shader_parameter/velocity = 0.5
+shader_parameter/baseTexture = ExtResource("2_s3t15")
+shader_parameter/direction2 = Vector2(0, 1)
+shader_parameter/velocity2 = 0.5
+shader_parameter/pattern2 = ExtResource("3_aw48p")
