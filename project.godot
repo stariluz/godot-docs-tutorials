@@ -23,7 +23,6 @@ config/icon="uid://c8ybp4soplnni"
 
 window/size/viewport_width=480
 window/size/viewport_height=980
-window/size/mode=2
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 window/handheld/orientation=1

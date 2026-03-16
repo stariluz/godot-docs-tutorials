@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dq4alrgljqj0b" path="res://4_creating_first_2d_game/scenes/player.tscn" id="1_ss85s"]
 [ext_resource type="PackedScene" uid="uid://bxylv606pknop" path="res://4_creating_first_2d_game/scenes/mob.tscn" id="2_dwsg8"]
 [ext_resource type="Script" uid="uid://b8v2lyy2axbl8" path="res://4_creating_first_2d_game/scripts/mob_spawn_location.gd" id="4_6jkmq"]
-[ext_resource type="PackedScene" uid="uid://bejwckqroqkph" path="res://4_creating_first_2d_game/scenes/hud.tscn" id="5_6fdm5"]
+[ext_resource type="PackedScene" uid="uid://bejwckqroqkph" path="res://4_creating_first_2d_game/scenes/ui/hud.tscn" id="5_6fdm5"]
 [ext_resource type="AudioStream" uid="uid://dtt53ofsu5303" path="res://4_creating_first_2d_game/art/sfx_and_music/gameover.wav" id="7_h7jya"]
 
 [sub_resource type="Curve2D" id="Curve2D_plavv"]

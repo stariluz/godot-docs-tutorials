@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dnqkhyaiaue4v"]
+
+[ext_resource type="Shader" uid="uid://dwy6aw3ngorh" path="res://4_creating_first_2d_game/shaders/background_01.gdshader" id="1_v7hic"]
+[ext_resource type="Texture2D" uid="uid://byfsbklwbnenr" path="res://4_creating_first_2d_game/art/bg/bg1080x2400_background.png" id="2_jaigi"]
+[ext_resource type="Texture2D" uid="uid://b4cyqujuhit1u" path="res://4_creating_first_2d_game/art/bg/bg1080x2400_anim3_vertical.png" id="3_hsw6u"]
+[ext_resource type="Texture2D" uid="uid://byr8ydiftqj2p" path="res://4_creating_first_2d_game/art/bg/bg1080x2400_anim2_diagonal.png" id="4_nu6yy"]
+[ext_resource type="Texture2D" uid="uid://cj0ru7gspbewe" path="res://4_creating_first_2d_game/art/bg/bg1080x2400_anim1_horizontal.png" id="5_jyrn2"]
+[ext_resource type="Texture2D" uid="uid://40a3xc0ybc3f" path="res://4_creating_first_2d_game/art/bg/bg1080x2400_anim4_sinoidal.png" id="6_toy1f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uec41"]
+shader = ExtResource("1_v7hic")
+shader_parameter/time_scale = 0.5000000074506
+shader_parameter/velocity_scale = 0.1
+shader_parameter/amount = 5
+shader_parameter/patterns = [ExtResource("2_jaigi"), ExtResource("3_hsw6u"), ExtResource("4_nu6yy"), ExtResource("5_jyrn2"), ExtResource("6_toy1f")]
+shader_parameter/directions = PackedVector2Array(0.5, -0.3, 1, 0, 1, -1, 0, -1, 0.4, 1)
+shader_parameter/velocities = PackedFloat32Array(0.3, 0.5, 1.3, 1, 1.2)
+shader_parameter/visible_duration = 15.0
+shader_parameter/transition_duration = 2.0
+
+[sub_resource type="Gradient" id="Gradient_uec41"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xt4pt"]
+gradient = SubResource("Gradient_uec41")
+
+[node name="BackgroundHUD" type="CanvasLayer" unique_id=1599147079]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1420434663]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_uec41")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("GradientTexture2D_xt4pt")
+expand_mode = 5

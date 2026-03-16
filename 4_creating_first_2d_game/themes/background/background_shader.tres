@@ -274,7 +274,10 @@ result = acc;
 alpha = result.a;"
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_7pafd"]
+output_port_for_preview = 0
+default_input_values = [0, Vector2(0, 0), 1, Vector2(0, 0)]
 linked_parent_graph_frame = 87
+op_type = 0
 
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_cj5y8"]
 linked_parent_graph_frame = 288
@@ -283,6 +286,7 @@ default_value_enabled = true
 default_value = 1.0
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_tdnk5"]
+output_port_for_preview = 0
 expanded_output_ports = [0]
 linked_parent_graph_frame = 87
 source = 5
@@ -621,22 +625,22 @@ linked_parent_graph_frame = 86
 input_name = "time"
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_n2pq1"]
-size = Vector2(1996.0001, 991.00006)
+size = Vector2(1995.9999, 991.0001)
 title = "Pattern 1"
 attached_nodes = PackedInt32Array(2, 74, 27, 11, 10, 9, 8, 7, 6, 5, 3)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_6qiyg"]
-size = Vector2(1975.9999, 1011)
+size = Vector2(1976, 1011.00006)
 title = "Pattern 2"
 attached_nodes = PackedInt32Array(25, 73, 16, 26, 24, 22, 21, 20, 19, 18, 17)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_m0nfc"]
-size = Vector2(1975.9999, 1011)
+size = Vector2(1976, 1011.00006)
 title = "Pattern 3"
 attached_nodes = PackedInt32Array(37, 72, 46, 45, 44, 43, 42, 41, 40, 39, 38)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_14kdc"]
-size = Vector2(1975.9999, 1031)
+size = Vector2(1976, 1031)
 title = "Pattern 4"
 attached_nodes = PackedInt32Array(58, 71, 48, 56, 55, 54, 53, 52, 51, 50, 49)
 
