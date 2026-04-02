@@ -1,10 +1,18 @@
 extends Node
 
+signal score_updated(score: int)
+signal game_over(score: int)
+
 @export var mob_scene: PackedScene
 @export var mobs_container: Node
 var score: int
 var is_mobile=OS.has_feature("mobile")
 
+func set_score(_score:int)->void:
+	score=_score
+	score_updated.emit(score)
+	
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if not is_mobile:
@@ -13,26 +21,20 @@ func _ready() -> void:
 func new_game():
 	get_tree().call_group("mobs", "queue_free")
 	
-	score=0
-	$HUD.update_score(score)
-	
-	$HUD.show_message_and_wait("Get Ready")
+	set_score(0)
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
-	
 	$Music.play()
 
 
-func game_over() -> void:
+func end_game() -> void:
 	$ScoreTimer.stop()
 	$MobTimer.stop()
-	$HUD.show_game_over()
-	
 	$Music.stop()
-	$DeathSound.play()
+	game_over.emit(score)
 
 func _on_player_hit() -> void:
-	game_over()
+	end_game()
 
 func _on_mob_timer_timeout() -> void:
 	var mob:Mob=mob_scene.instantiate()
@@ -55,9 +57,11 @@ func _on_mob_timer_timeout() -> void:
 	mobs_container.add_child(mob)
 
 func _on_score_timer_timeout() -> void:
-	score += 1
-	$HUD.update_score(score)
+	set_score(score+1)
 
 func _on_start_timer_timeout() -> void:
 	$MobTimer.start()
 	$ScoreTimer.start()
+
+func _on_game_start() -> void:
+	new_game()

@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://desfsoanw1tfu"]
+
+[ext_resource type="Shader" uid="uid://cuofdwgdhldo3" path="res://4_creating_first_2d_game/shaders/text/text_noisy_border.gdshader" id="1_4fwdq"]
+
+[resource]
+shader = ExtResource("1_4fwdq")
+shader_parameter/maxLineWidth = 5.1390002441025
+shader_parameter/minLineWidth = 0.0
+shader_parameter/speed = 6.000000285
+shader_parameter/blockSize = 49.2870023411325
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/tolerance = 0.9990000128746

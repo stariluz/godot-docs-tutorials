@@ -23,6 +23,8 @@ config/icon="uid://c8ybp4soplnni"
 
 window/size/viewport_width=480
 window/size/viewport_height=980
+window/size/initial_position_type=0
+window/size/always_on_top=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 window/handheld/orientation=1
@@ -30,6 +32,12 @@ window/handheld/orientation=1
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/animatedtexturerect/plugin.cfg")
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+theme/custom="uid://ceribsrhka5id"
+theme/custom_font="uid://dvght2usga23k"
 
 [input]
 

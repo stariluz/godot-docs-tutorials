@@ -27,7 +27,7 @@ func _input(event:InputEvent):
 			is_screen_touched = true
 			anchor_position = event.position
 			show_joystick()
-		elif event.released:
+		elif event.canceled:
 			is_screen_touched = false
 			hide_joystick()
 	elif event is InputEventScreenDrag:

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TimedMessage" format=3 uid="uid://ck6qhe1d4i58p"]
+
+[ext_resource type="Script" uid="uid://b2d8sb54frajb" path="res://4_creating_first_2d_game/scripts/types/timed_message.gd" id="1_7ki58"]
+[ext_resource type="AudioStream" uid="uid://b5y6cgfsfegb7" path="res://4_creating_first_2d_game/art/sfx/ui/go_00.wav" id="2_7glw6"]
+
+[resource]
+script = ExtResource("1_7ki58")
+text = "Your incredible score:"
+sfx = ExtResource("2_7glw6")
+metadata/_custom_type_script = "uid://b2d8sb54frajb"

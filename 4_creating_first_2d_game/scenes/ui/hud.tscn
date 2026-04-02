@@ -1,10 +1,20 @@
 [gd_scene format=3 uid="uid://bejwckqroqkph"]
 
-[ext_resource type="Script" uid="uid://bawaqd5o3lfsd" path="res://4_creating_first_2d_game/scripts/hud.gd" id="1_0gik8"]
+[ext_resource type="Script" uid="uid://bawaqd5o3lfsd" path="res://4_creating_first_2d_game/scripts/ui/hud.gd" id="1_0gik8"]
 [ext_resource type="FontFile" uid="uid://da211b2pdh07v" path="res://4_creating_first_2d_game/fonts/Knewave/Knewave-Regular.ttf" id="2_0fqlj"]
 [ext_resource type="Theme" uid="uid://ceribsrhka5id" path="res://4_creating_first_2d_game/themes/ui_theme_01.tres" id="3_0fqlj"]
+[ext_resource type="Material" uid="uid://nkw1c87iytrw" path="res://4_creating_first_2d_game/shaders/text/text_noisy_border_01.tres" id="3_wq7qe"]
+[ext_resource type="Texture2D" uid="uid://rgsnquq0c7v8" path="res://4_creating_first_2d_game/art/icons/Logo Godot.png" id="4_2gol5"]
 [ext_resource type="PackedScene" uid="uid://blqmnmtn8g1ua" path="res://4_creating_first_2d_game/themes/button_main/button_main_border_animated.tscn" id="4_4qkjx"]
-[ext_resource type="Texture2D" uid="uid://blc55edc82jo6" path="res://4_creating_first_2d_game/art/ui/button_border_white_128x128_01.png" id="4_j7pes"]
+[ext_resource type="PackedScene" uid="uid://de3ft5nbmsce1" path="res://4_creating_first_2d_game/scenes/ui/shadered_text.tscn" id="5_o6nbf"]
+[ext_resource type="Texture2D" uid="uid://4n0ex0ulvxkb" path="res://4_creating_first_2d_game/art/ui/customize_128x128.png" id="8_wsprq"]
+[ext_resource type="Texture2D" uid="uid://cwcr22dx1o5c6" path="res://4_creating_first_2d_game/art/ui/settings_128x128.png" id="9_i51vg"]
+[ext_resource type="Script" uid="uid://rjvqr81dtp86" path="res://4_creating_first_2d_game/scripts/ui/labeled_transition.gd" id="9_sjg52"]
+[ext_resource type="Script" uid="uid://b2d8sb54frajb" path="res://4_creating_first_2d_game/scripts/types/timed_message.gd" id="10_w2sky"]
+[ext_resource type="AudioStream" uid="uid://cjls45qdksvfk" path="res://4_creating_first_2d_game/art/sfx/ui/ready_00.wav" id="11_sjg52"]
+[ext_resource type="AudioStream" uid="uid://b5y6cgfsfegb7" path="res://4_creating_first_2d_game/art/sfx/ui/go_00.wav" id="12_kcni0"]
+[ext_resource type="AudioStream" uid="uid://budg7exil5p1f" path="res://4_creating_first_2d_game/art/sfx/game_over_00.ogg" id="14_kcni0"]
+[ext_resource type="Script" uid="uid://3cac4r5gmyh0" path="res://4_creating_first_2d_game/scripts/ui/game_over_to_home_screen.gd" id="14_ymuyi"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_0gik8"]
 action = &"start_game"
@@ -12,49 +22,162 @@ action = &"start_game"
 [sub_resource type="Shortcut" id="Shortcut_0fqlj"]
 events = [SubResource("InputEventAction_0gik8")]
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_0fqlj"]
-frames = 3
-frame_1/duration = 1.0
-frame_2/duration = 1.0
+[sub_resource type="Resource" id="Resource_ymuyi"]
+script = ExtResource("10_w2sky")
+text = "Ready?"
+time = 1.2
+sfx = ExtResource("11_sjg52")
+metadata/_custom_type_script = "uid://b2d8sb54frajb"
+
+[sub_resource type="Resource" id="Resource_lylnj"]
+script = ExtResource("10_w2sky")
+text = "GO!"
+time = 0.3
+sfx = ExtResource("12_kcni0")
+metadata/_custom_type_script = "uid://b2d8sb54frajb"
+
+[sub_resource type="Resource" id="Resource_ovrnn"]
+script = ExtResource("10_w2sky")
+text = "NOOOOOO!"
+time = 3.0
+sfx = ExtResource("14_kcni0")
+metadata/_custom_type_script = "uid://b2d8sb54frajb"
 
 [node name="HUD" type="CanvasLayer" unique_id=712156666]
 script = ExtResource("1_0gik8")
 
-[node name="ScoreLabel" type="Label" parent="." unique_id=974769463]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -22.5
-offset_right = 22.5
-offset_bottom = 78.0
+[node name="HomeScreen" type="Control" parent="." unique_id=1212643015]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_0fqlj")
-theme_override_font_sizes/font_size = 64
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
+grow_vertical = 2
 
-[node name="Message" type="Label" parent="." unique_id=1419566899]
-anchors_preset = 8
+[node name="Navbar" parent="HomeScreen" unique_id=295507901 instance=ExtResource("5_o6nbf")]
+material = ExtResource("3_wq7qe")
+layout_mode = 1
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_bottom = 88.0
+grow_vertical = 1
+
+[node name="SubViewport" parent="HomeScreen/Navbar" index="0" unique_id=912961940]
+size = Vector2i(480, 88)
+
+[node name="TextureButton2" type="TextureButton" parent="HomeScreen/Navbar/SubViewport" index="0" unique_id=1139253974]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 64.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+texture_normal = ExtResource("8_wsprq")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton" type="TextureButton" parent="HomeScreen/Navbar/SubViewport" index="1" unique_id=561281794]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture_normal = ExtResource("9_i51vg")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Header" type="Control" parent="HomeScreen" unique_id=473195456]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 100.0
+offset_bottom = 308.0
+grow_horizontal = 2
+metadata/_edit_group_ = true
+
+[node name="GodotLogo" type="TextureRect" parent="HomeScreen/Header" unique_id=292220520]
+material = ExtResource("3_wq7qe")
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.01923077
 anchor_right = 0.5
+anchor_bottom = 0.01923077
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 32.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("4_2gol5")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" parent="HomeScreen/Header" unique_id=759708674 instance=ExtResource("5_o6nbf")]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = -120.0
-offset_right = 240.0
-offset_bottom = 120.0
+offset_top = -100.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SubViewport" parent="HomeScreen/Header/Title" index="0" unique_id=912961940]
+size = Vector2i(480, 200)
+
+[node name="Title" type="Label" parent="HomeScreen/Header/Title/SubViewport" index="0" unique_id=1419566899]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -59.5
+offset_bottom = 59.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_0fqlj")
-theme_override_fonts/font = ExtResource("2_0fqlj")
-theme_override_font_sizes/font_size = 64
-text = "Dodge the Creeps!"
+theme_type_variation = &"HeaderMedium"
+text = "Dodge
+the Creeps"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="StartButton" type="Button" parent="." unique_id=728331593]
+[node name="Stariluz" parent="HomeScreen/Header" unique_id=55126783 instance=ExtResource("5_o6nbf")]
+material = ExtResource("3_wq7qe")
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+offset_top = -40.0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SubViewport" parent="HomeScreen/Header/Stariluz" index="0" unique_id=912961940]
+size = Vector2i(480, 40)
+
+[node name="Text" type="Label" parent="HomeScreen/Header/Stariluz/SubViewport" index="0" unique_id=584852957]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_0fqlj")
+theme_type_variation = &"HeaderSmall"
+text = "stariluz version"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="StartButton" type="Button" parent="HomeScreen" unique_id=728331593]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -68,29 +191,195 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
+mouse_default_cursor_shape = 2
 theme = ExtResource("3_0fqlj")
 theme_override_constants/h_separation = -128
 shortcut = SubResource("Shortcut_0fqlj")
-text = "PLAY"
 
-[node name="ButtonMainBorderAnimated" parent="StartButton" unique_id=821983213 instance=ExtResource("4_4qkjx")]
+[node name="ButtonMainBorderAnimated" parent="HomeScreen/StartButton" unique_id=821983213 instance=ExtResource("4_4qkjx")]
 layout_mode = 1
-grow_horizontal = 1
-grow_vertical = 1
-texture = ExtResource("4_j7pes")
-frame = 1
+mouse_filter = 1
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
 
-[node name="MessageTimer" type="Timer" parent="." unique_id=1922316347]
-wait_time = 2.0
+[node name="Play" parent="HomeScreen/StartButton" unique_id=1736589904 instance=ExtResource("5_o6nbf")]
+layout_mode = 1
+mouse_behavior_recursive = 2
+
+[node name="SubViewport" parent="HomeScreen/StartButton/Play" index="0" unique_id=912961940]
+size = Vector2i(332, 162)
+
+[node name="PLAY" type="RichTextLabel" parent="HomeScreen/StartButton/Play/SubViewport" index="0" unique_id=416586229]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_0fqlj")
+text = "PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButtonSpawnTimer" type="Timer" parent="HomeScreen" unique_id=1198027521]
 one_shot = true
 
-[node name="StartButtonSpawnTimer" type="Timer" parent="." unique_id=1198027521]
-one_shot = true
+[node name="HomeScreenToPlayScreen" type="Control" parent="." unique_id=1633408967]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("9_sjg52")
+messages = Array[ExtResource("10_w2sky")]([SubResource("Resource_ymuyi"), SubResource("Resource_lylnj")])
+wait_for_last_message = false
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=561281794]
-offset_right = 40.0
-offset_bottom = 40.0
-texture_normal = SubResource("AnimatedTexture_0fqlj")
+[node name="Label" parent="HomeScreenToPlayScreen" unique_id=420329585 instance=ExtResource("5_o6nbf")]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -186.0
+offset_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_group_ = true
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
+[node name="SubViewport" parent="HomeScreenToPlayScreen/Label" index="0" unique_id=912961940]
+size = Vector2i(480, 240)
+render_target_update_mode = 0
+
+[node name="Text" type="Label" parent="HomeScreenToPlayScreen/Label/SubViewport" index="0" unique_id=976770966]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_0fqlj")
+theme_type_variation = &"HeaderLarge"
+text = "Ready?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="HomeScreenToPlayScreen" unique_id=777972457]
+
+[node name="PlayScreen" type="Control" parent="." unique_id=628747705]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="ScoreLabel" type="Label" parent="PlayScreen" unique_id=974769463]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_0fqlj")
+theme_override_font_sizes/font_size = 64
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverToHomeScreen" type="Control" parent="." unique_id=1120077008]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("14_ymuyi")
+messages = Array[ExtResource("10_w2sky")]([SubResource("Resource_ovrnn")])
+
+[node name="Label" parent="GameOverToHomeScreen" unique_id=154839432 instance=ExtResource("5_o6nbf")]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -186.0
+offset_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_group_ = true
+
+[node name="SubViewport" parent="GameOverToHomeScreen/Label" index="0" unique_id=912961940]
+size = Vector2i(480, 240)
+render_target_update_mode = 0
+
+[node name="Text" type="Label" parent="GameOverToHomeScreen/Label/SubViewport" index="0" unique_id=1108733248]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_0fqlj")
+theme_type_variation = &"HeaderLarge"
+text = "Noooo!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Score" parent="GameOverToHomeScreen" unique_id=1798670459 instance=ExtResource("5_o6nbf")]
+visible = false
+material = ExtResource("3_wq7qe")
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -34.0
+offset_bottom = 46.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_group_ = true
+
+[node name="SubViewport" parent="GameOverToHomeScreen/Score" index="0" unique_id=912961940]
+size = Vector2i(480, 80)
+render_target_update_mode = 0
+
+[node name="Text" type="Label" parent="GameOverToHomeScreen/Score/SubViewport" index="0" unique_id=167184979]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_0fqlj")
+theme_type_variation = &"HeaderSmall"
+text = "Your incredible score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="GameOverToHomeScreen" unique_id=1520382842]
+
+[node name="ScoreSFX" type="AudioStreamPlayer2D" parent="GameOverToHomeScreen" unique_id=166317602]
+
+[connection signal="game_over" from="." to="GameOverToHomeScreen" method="_on_game_over"]
+[connection signal="play_actuated" from="." to="HomeScreenToPlayScreen" method="_on_play"]
+[connection signal="pressed" from="HomeScreen/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="messages_end" from="HomeScreenToPlayScreen" to="." method="_on_game_start_transition_ends"]
+[connection signal="messages_end" from="GameOverToHomeScreen" to="." method="_on_game_over_transition_ends"]
+
+[editable path="HomeScreen/Navbar"]
+[editable path="HomeScreen/Header/Title"]
+[editable path="HomeScreen/Header/Stariluz"]
+[editable path="HomeScreen/StartButton/Play"]
+[editable path="HomeScreenToPlayScreen/Label"]
+[editable path="GameOverToHomeScreen/Label"]
+[editable path="GameOverToHomeScreen/Score"]

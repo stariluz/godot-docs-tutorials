@@ -1,15 +1,17 @@
 [gd_resource type="Theme" format=3 uid="uid://ceribsrhka5id"]
 
-[ext_resource type="FontVariation" uid="uid://khh4us543jmf" path="res://4_creating_first_2d_game/themes/Knewave.tres" id="1_07xsu"]
+[ext_resource type="FontVariation" uid="uid://khh4us543jmf" path="res://4_creating_first_2d_game/fonts/Knewave/Knewave.tres" id="1_lu4qx"]
 [ext_resource type="StyleBox" uid="uid://xx10d8py6tpm" path="res://4_creating_first_2d_game/themes/button_main/button_main_01_disabled.tres" id="2_0jdgo"]
 [ext_resource type="StyleBox" uid="uid://chheeeiofvgp8" path="res://4_creating_first_2d_game/themes/button_main/button_main_01_hover.tres" id="3_nb8qc"]
 [ext_resource type="StyleBox" uid="uid://bufohb6ia22j3" path="res://4_creating_first_2d_game/themes/button_main/button_main_01_normal.tres" id="3_q0mpj"]
 [ext_resource type="StyleBox" uid="uid://cgym3gshl3pke" path="res://4_creating_first_2d_game/themes/button_main/button_main_border_01.tres" id="4_nb8qc"]
 [ext_resource type="StyleBox" uid="uid://biwf7ygsvp4wf" path="res://4_creating_first_2d_game/themes/button_main/button_main_01_pressed.tres" id="5_nb8qc"]
+[ext_resource type="FontVariation" uid="uid://dvght2usga23k" path="res://4_creating_first_2d_game/fonts/Knewave/Knewave_Shaders.tres" id="6_ge50u"]
+[ext_resource type="FontVariation" uid="uid://d3f5wae11dryq" path="res://4_creating_first_2d_game/fonts/Allan/allan_shader.tres" id="7_joelb"]
 
 [resource]
 Button/font_sizes/font_size = 96
-Button/fonts/font = ExtResource("1_07xsu")
+Button/fonts/font = ExtResource("1_lu4qx")
 Button/styles/disabled = ExtResource("2_0jdgo")
 Button/styles/disabled_mirrored = ExtResource("2_0jdgo")
 Button/styles/focus = ExtResource("3_nb8qc")
@@ -18,5 +20,14 @@ Button/styles/normal = ExtResource("3_q0mpj")
 Button/styles/normal_mirrored = ExtResource("3_q0mpj")
 Button/styles/pressed = ExtResource("5_nb8qc")
 Button/styles/pressed_mirrored = ExtResource("5_nb8qc")
+HeaderLarge/font_sizes/font_size = 96
+HeaderLarge/fonts/font = ExtResource("6_ge50u")
+HeaderMedium/font_sizes/font_size = 64
+HeaderMedium/fonts/font = ExtResource("6_ge50u")
+HeaderSmall/fonts/font = ExtResource("7_joelb")
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_lu4qx")
+RichTextLabel/font_sizes/normal_font_size = 96
+RichTextLabel/fonts/normal_font = ExtResource("6_ge50u")
 button_main_border/base_type = &"Panel"
 button_main_border/styles/panel = ExtResource("4_nb8qc")
