@@ -15,6 +15,8 @@
 [ext_resource type="AudioStream" uid="uid://b5y6cgfsfegb7" path="res://4_creating_first_2d_game/art/sfx/ui/go_00.wav" id="12_kcni0"]
 [ext_resource type="AudioStream" uid="uid://budg7exil5p1f" path="res://4_creating_first_2d_game/art/sfx/game_over_00.ogg" id="14_kcni0"]
 [ext_resource type="Script" uid="uid://3cac4r5gmyh0" path="res://4_creating_first_2d_game/scripts/ui/game_over_to_home_screen.gd" id="14_ymuyi"]
+[ext_resource type="Texture2D" uid="uid://bc1qj6whopnhe" path="res://4_creating_first_2d_game/art/ui/return_128x128.png" id="16_tnj6h"]
+[ext_resource type="Texture2D" uid="uid://chcpfon7msuht" path="res://4_creating_first_2d_game/art/ui/reset_128x128.png" id="17_465k6"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_0gik8"]
 action = &"start_game"
@@ -47,6 +49,7 @@ metadata/_custom_type_script = "uid://b2d8sb54frajb"
 script = ExtResource("1_0gik8")
 
 [node name="HomeScreen" type="Control" parent="." unique_id=1212643015]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,8 +67,18 @@ grow_vertical = 1
 
 [node name="SubViewport" parent="HomeScreen/Navbar" index="0" unique_id=912961940]
 size = Vector2i(480, 88)
+render_target_update_mode = 0
 
-[node name="TextureButton2" type="TextureButton" parent="HomeScreen/Navbar/SubViewport" index="0" unique_id=1139253974]
+[node name="SettingsButton" type="TextureButton" parent="HomeScreen/Navbar/SubViewport" index="0" unique_id=561281794]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture_normal = ExtResource("9_i51vg")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="StylesButton" type="TextureButton" parent="HomeScreen/Navbar/SubViewport" index="1" unique_id=1139253974]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -80,21 +93,12 @@ texture_normal = ExtResource("8_wsprq")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="TextureButton" type="TextureButton" parent="HomeScreen/Navbar/SubViewport" index="1" unique_id=561281794]
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 64.0
-offset_bottom = 64.0
-texture_normal = ExtResource("9_i51vg")
-ignore_texture_size = true
-stretch_mode = 5
-
 [node name="Header" type="Control" parent="HomeScreen" unique_id=473195456]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_top = 100.0
-offset_bottom = 308.0
+offset_bottom = 328.0
 grow_horizontal = 2
 metadata/_edit_group_ = true
 
@@ -131,17 +135,16 @@ size_flags_vertical = 3
 
 [node name="SubViewport" parent="HomeScreen/Header/Title" index="0" unique_id=912961940]
 size = Vector2i(480, 200)
+render_target_update_mode = 0
 
-[node name="Title" type="Label" parent="HomeScreen/Header/Title/SubViewport" index="0" unique_id=1419566899]
+[node name="Text" type="Label" parent="HomeScreen/Header/Title/SubViewport" index="0" unique_id=1419566899]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -59.5
-offset_bottom = 59.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_0fqlj")
-theme_type_variation = &"HeaderMedium"
+theme_type_variation = &"HeaderLarge"
 text = "Dodge
 the Creeps"
 horizontal_alignment = 1
@@ -160,6 +163,7 @@ size_flags_vertical = 3
 
 [node name="SubViewport" parent="HomeScreen/Header/Stariluz" index="0" unique_id=912961940]
 size = Vector2i(480, 40)
+render_target_update_mode = 0
 
 [node name="Text" type="Label" parent="HomeScreen/Header/Stariluz/SubViewport" index="0" unique_id=584852957]
 anchors_preset = 15
@@ -183,9 +187,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -166.0
-offset_top = -194.0
-offset_right = 166.0
+offset_left = -192.0
+offset_top = -212.0
+offset_right = 192.0
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -195,6 +199,7 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("3_0fqlj")
 theme_override_constants/h_separation = -128
 shortcut = SubResource("Shortcut_0fqlj")
+metadata/_edit_group_ = true
 
 [node name="ButtonMainBorderAnimated" parent="HomeScreen/StartButton" unique_id=821983213 instance=ExtResource("4_4qkjx")]
 layout_mode = 1
@@ -205,11 +210,13 @@ mouse_default_cursor_shape = 2
 [node name="Play" parent="HomeScreen/StartButton" unique_id=1736589904 instance=ExtResource("5_o6nbf")]
 layout_mode = 1
 mouse_behavior_recursive = 2
+metadata/_edit_group_ = true
 
 [node name="SubViewport" parent="HomeScreen/StartButton/Play" index="0" unique_id=912961940]
-size = Vector2i(332, 162)
+size = Vector2i(384, 180)
+render_target_update_mode = 0
 
-[node name="PLAY" type="RichTextLabel" parent="HomeScreen/StartButton/Play/SubViewport" index="0" unique_id=416586229]
+[node name="PLAY" type="Label" parent="HomeScreen/StartButton/Play/SubViewport" index="0" unique_id=1985946371]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -219,6 +226,7 @@ mouse_filter = 1
 mouse_behavior_recursive = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_0fqlj")
+theme_type_variation = &"MainButton"
 text = "PLAY"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -370,6 +378,99 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ScoreSFX" type="AudioStreamPlayer2D" parent="GameOverToHomeScreen" unique_id=166317602]
 
+[node name="SettingsScreen" type="Control" parent="." unique_id=963877547]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Navbar" parent="SettingsScreen" unique_id=426564277 instance=ExtResource("5_o6nbf")]
+material = ExtResource("3_wq7qe")
+layout_mode = 1
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_bottom = 88.0
+grow_vertical = 1
+
+[node name="SubViewport" parent="SettingsScreen/Navbar" index="0" unique_id=912961940]
+size = Vector2i(480, 88)
+
+[node name="ReturnButton" type="TextureButton" parent="SettingsScreen/Navbar/SubViewport" index="0" unique_id=639687193]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture_normal = ExtResource("16_tnj6h")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ResetAllButton" type="TextureButton" parent="SettingsScreen/Navbar/SubViewport" index="1" unique_id=1216713684]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 64.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+texture_normal = ExtResource("17_465k6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsScreen" unique_id=1744321588]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_0fqlj")
+theme_type_variation = &"MainMarginContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsScreen/MarginContainer" unique_id=1354672186]
+layout_mode = 2
+alignment = 1
+
+[node name="Header" type="Control" parent="SettingsScreen/MarginContainer/VBoxContainer" unique_id=394555510]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="Title" parent="SettingsScreen/MarginContainer/VBoxContainer/Header" unique_id=1146823444 instance=ExtResource("5_o6nbf")]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SubViewport" parent="SettingsScreen/MarginContainer/VBoxContainer/Header/Title" index="0" unique_id=912961940]
+size = Vector2i(384, 100)
+
+[node name="Text" type="Label" parent="SettingsScreen/MarginContainer/VBoxContainer/Header/Title/SubViewport" index="0" unique_id=472992994]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_0fqlj")
+theme_type_variation = &"HeaderMedium"
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="SettingsScreen/MarginContainer/VBoxContainer" unique_id=508767390]
+layout_mode = 2
+theme = ExtResource("3_0fqlj")
+theme_type_variation = &"Gap3"
+
+[node name="PanelContainer" type="PanelContainer" parent="SettingsScreen/MarginContainer/VBoxContainer" unique_id=553040072]
+layout_mode = 2
+theme = ExtResource("3_0fqlj")
+
 [connection signal="game_over" from="." to="GameOverToHomeScreen" method="_on_game_over"]
 [connection signal="play_actuated" from="." to="HomeScreenToPlayScreen" method="_on_play"]
 [connection signal="pressed" from="HomeScreen/StartButton" to="." method="_on_start_button_pressed"]
@@ -383,3 +484,5 @@ metadata/_edit_use_anchors_ = true
 [editable path="HomeScreenToPlayScreen/Label"]
 [editable path="GameOverToHomeScreen/Label"]
 [editable path="GameOverToHomeScreen/Score"]
+[editable path="SettingsScreen/Navbar"]
+[editable path="SettingsScreen/MarginContainer/VBoxContainer/Header/Title"]

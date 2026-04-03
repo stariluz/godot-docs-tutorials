@@ -5,6 +5,9 @@
 [resource]
 base_font = ExtResource("1_o471s")
 variation_embolden = -2.0
+opentype_features = {
+1667329140: 0
+}
 spacing_glyph = 2
 spacing_top = -41
-baseline_offset = 0.075
+baseline_offset = 0.05

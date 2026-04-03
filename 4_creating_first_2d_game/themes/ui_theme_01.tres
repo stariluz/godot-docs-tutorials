@@ -9,6 +9,16 @@
 [ext_resource type="FontVariation" uid="uid://dvght2usga23k" path="res://4_creating_first_2d_game/fonts/Knewave/Knewave_Shaders.tres" id="6_ge50u"]
 [ext_resource type="FontVariation" uid="uid://d3f5wae11dryq" path="res://4_creating_first_2d_game/fonts/Allan/allan_shader.tres" id="7_joelb"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lu4qx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ge50u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_joelb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_753dr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4smm"]
+
 [resource]
 Button/font_sizes/font_size = 96
 Button/fonts/font = ExtResource("1_lu4qx")
@@ -20,14 +30,36 @@ Button/styles/normal = ExtResource("3_q0mpj")
 Button/styles/normal_mirrored = ExtResource("3_q0mpj")
 Button/styles/pressed = ExtResource("5_nb8qc")
 Button/styles/pressed_mirrored = ExtResource("5_nb8qc")
-HeaderLarge/font_sizes/font_size = 96
+Gap1/base_type = &"HSeparator"
+Gap1/constants/separation = 16
+Gap1/styles/separator = SubResource("StyleBoxEmpty_lu4qx")
+Gap2/base_type = &"HSeparator"
+Gap2/constants/separation = 24
+Gap2/styles/separator = SubResource("StyleBoxEmpty_ge50u")
+Gap3/base_type = &"HSeparator"
+Gap3/constants/separation = 32
+Gap3/styles/separator = SubResource("StyleBoxEmpty_joelb")
+Gap4/base_type = &"HSeparator"
+Gap4/constants/separation = 48
+Gap4/styles/separator = SubResource("StyleBoxEmpty_753dr")
+Gap5/base_type = &"HSeparator"
+Gap5/constants/separation = 64
+Gap5/styles/separator = SubResource("StyleBoxEmpty_g4smm")
+HeaderLarge/font_sizes/font_size = 80
 HeaderLarge/fonts/font = ExtResource("6_ge50u")
 HeaderMedium/font_sizes/font_size = 64
 HeaderMedium/fonts/font = ExtResource("6_ge50u")
+HeaderSmall/font_sizes/font_size = 32
 HeaderSmall/fonts/font = ExtResource("7_joelb")
 Label/font_sizes/font_size = 32
 Label/fonts/font = ExtResource("1_lu4qx")
-RichTextLabel/font_sizes/normal_font_size = 96
-RichTextLabel/fonts/normal_font = ExtResource("6_ge50u")
+MainButton/base_type = &"Label"
+MainButton/font_sizes/font_size = 128
+MainButton/fonts/font = ExtResource("6_ge50u")
+MainMarginContainer/base_type = &"MarginContainer"
+MainMarginContainer/constants/margin_bottom = 80
+MainMarginContainer/constants/margin_left = 48
+MainMarginContainer/constants/margin_right = 48
+MainMarginContainer/constants/margin_top = 128
 button_main_border/base_type = &"Panel"
 button_main_border/styles/panel = ExtResource("4_nb8qc")
