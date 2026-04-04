@@ -1,6 +1,6 @@
-[gd_resource type="StyleBoxTexture" format=3 uid="uid://bufohb6ia22j3"]
+[gd_resource type="StyleBoxTexture" load_steps=0 format=3 uid="uid://bufohb6ia22j3"]
 
-[ext_resource type="Texture2D" uid="uid://dxfeomqcarlul" path="res://4_creating_first_2d_game/art/ui/button_main_128x128_03.png" id="1_806ph"]
+[ext_resource type="Texture2D" uid="uid://dxfeomqcarlul" path="res://4_creating_first_2d_game/art/textures/button_main_128x128_03.png" id="1_806ph"]
 
 [resource]
 content_margin_left = 64.0

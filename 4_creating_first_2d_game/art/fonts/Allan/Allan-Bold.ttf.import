@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://da211b2pdh07v"
-path="res://.godot/imported/Knewave-Regular.ttf-eac0952df4edc6d293bfee6b95a73935.fontdata"
+uid="uid://2li4c4tkybh0"
+path="res://.godot/imported/Allan-Bold.ttf-82dcb6b85ad10413256b42f025d29e52.fontdata"
 
 [deps]
 
-source_file="res://4_creating_first_2d_game/fonts/Knewave/Knewave-Regular.ttf"
-dest_files=["res://.godot/imported/Knewave-Regular.ttf-eac0952df4edc6d293bfee6b95a73935.fontdata"]
+source_file="res://4_creating_first_2d_game/art/fonts/Allan/Allan-Bold.ttf"
+dest_files=["res://.godot/imported/Allan-Bold.ttf-82dcb6b85ad10413256b42f025d29e52.fontdata"]
 
 [params]
 

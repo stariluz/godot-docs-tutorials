@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" load_steps=0 format=3 uid="uid://khh4us543jmf"]
+
+[ext_resource type="FontFile" uid="uid://da211b2pdh07v" path="res://4_creating_first_2d_game/art/fonts/Knewave/Knewave-Regular.ttf" id="1_kenga"]
+
+[resource]
+base_font = ExtResource("1_kenga")
+spacing_top = -30
+spacing_bottom = -30

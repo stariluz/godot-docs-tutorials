@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://blqmnmtn8g1ua"]
+[gd_scene load_steps=0 format=3 uid="uid://blqmnmtn8g1ua"]
 
-[ext_resource type="Texture2D" uid="uid://b4qu6scikqwco" path="res://4_creating_first_2d_game/art/ui/button_border_white_128x128_00.png" id="1_gk7md"]
+[ext_resource type="Texture2D" uid="uid://b4qu6scikqwco" path="res://4_creating_first_2d_game/art/textures/button_border_white_128x128_00.png" id="1_gk7md"]
 [ext_resource type="Script" uid="uid://d4nfkgai6nvot" path="res://addons/animatedtexturerect/animated_texture_rect.gd" id="2_0hgul"]
-[ext_resource type="Texture2D" uid="uid://blc55edc82jo6" path="res://4_creating_first_2d_game/art/ui/button_border_white_128x128_01.png" id="3_lvlgk"]
+[ext_resource type="Texture2D" uid="uid://blc55edc82jo6" path="res://4_creating_first_2d_game/art/textures/button_border_white_128x128_01.png" id="3_lvlgk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j7pes"]
 animations = [{

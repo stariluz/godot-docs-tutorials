@@ -1,6 +1,0 @@
-[gd_resource type="FontVariation" format=3 uid="uid://d3f5wae11dryq"]
-
-[ext_resource type="FontFile" uid="uid://2li4c4tkybh0" path="res://4_creating_first_2d_game/fonts/Allan/Allan-Bold.ttf" id="1_dfgce"]
-
-[resource]
-base_font = ExtResource("1_dfgce")

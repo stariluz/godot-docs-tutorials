@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://b0rattrb6vg62"]
+
+[ext_resource type="FontFile" uid="uid://2li4c4tkybh0" path="res://4_creating_first_2d_game/art/fonts/Allan/Allan-Bold.ttf" id="1_ye0fc"]
+
+[resource]
+base_font = ExtResource("1_ye0fc")
+spacing_bottom = -5

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://btdlv4mqi82sc"
-path="res://.godot/imported/Xolonium-Regular.ttf-52bb5f401099a956d1a5624080e8c6e8.fontdata"
+uid="uid://da211b2pdh07v"
+path="res://.godot/imported/Knewave-Regular.ttf-5336ece4b176e8f84ba1ce8ba938a063.fontdata"
 
 [deps]
 
-source_file="res://4_creating_first_2d_game/fonts/Xolonium/Xolonium-Regular.ttf"
-dest_files=["res://.godot/imported/Xolonium-Regular.ttf-52bb5f401099a956d1a5624080e8c6e8.fontdata"]
+source_file="res://4_creating_first_2d_game/art/fonts/Knewave/Knewave-Regular.ttf"
+dest_files=["res://.godot/imported/Knewave-Regular.ttf-5336ece4b176e8f84ba1ce8ba938a063.fontdata"]
 
 [params]
 

@@ -1,15 +1,16 @@
-[gd_resource type="Theme" format=3 uid="uid://ceribsrhka5id"]
+[gd_resource type="Theme" load_steps=23 format=3 uid="uid://ceribsrhka5id"]
 
-[ext_resource type="FontVariation" uid="uid://khh4us543jmf" path="res://4_creating_first_2d_game/fonts/Knewave/Knewave.tres" id="1_lu4qx"]
+[ext_resource type="FontVariation" uid="uid://khh4us543jmf" path="res://4_creating_first_2d_game/art/fonts/Knewave/Knewave.tres" id="1_ge50u"]
 [ext_resource type="StyleBox" uid="uid://xx10d8py6tpm" path="res://4_creating_first_2d_game/themes/button_main/button_main_01_disabled.tres" id="2_0jdgo"]
 [ext_resource type="StyleBox" uid="uid://chheeeiofvgp8" path="res://4_creating_first_2d_game/themes/button_main/button_main_01_hover.tres" id="3_nb8qc"]
 [ext_resource type="StyleBox" uid="uid://bufohb6ia22j3" path="res://4_creating_first_2d_game/themes/button_main/button_main_01_normal.tres" id="3_q0mpj"]
 [ext_resource type="StyleBox" uid="uid://cgym3gshl3pke" path="res://4_creating_first_2d_game/themes/button_main/button_main_border_01.tres" id="4_nb8qc"]
 [ext_resource type="StyleBox" uid="uid://biwf7ygsvp4wf" path="res://4_creating_first_2d_game/themes/button_main/button_main_01_pressed.tres" id="5_nb8qc"]
-[ext_resource type="FontVariation" uid="uid://dvght2usga23k" path="res://4_creating_first_2d_game/fonts/Knewave/Knewave_Shaders.tres" id="6_ge50u"]
-[ext_resource type="FontVariation" uid="uid://d3f5wae11dryq" path="res://4_creating_first_2d_game/fonts/Allan/allan_shader.tres" id="7_joelb"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lu4qx"]
+[ext_resource type="FontVariation" uid="uid://dvght2usga23k" path="res://4_creating_first_2d_game/art/fonts/Knewave/Knewave_Shaders.tres" id="6_joelb"]
+[ext_resource type="FontVariation" uid="uid://d3f5wae11dryq" path="res://4_creating_first_2d_game/art/fonts/Allan/allan_shader.tres" id="8_753dr"]
+[ext_resource type="FontVariation" uid="uid://b0rattrb6vg62" path="res://4_creating_first_2d_game/art/fonts/Allan/allan_label.tres" id="8_g4smm"]
+[ext_resource type="Texture2D" uid="uid://oxmrqn5ma2pn" path="res://4_creating_first_2d_game/art/textures/input_field_background_01_128x128.png" id="8_ge50u"]
+[ext_resource type="Texture2D" uid="uid://b1xepq7ggp4v1" path="res://4_creating_first_2d_game/art/textures/textbox_background_01_24x24.png" id="10_753dr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ge50u"]
 
@@ -19,9 +20,33 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4smm"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_joelb"]
+texture = ExtResource("8_ge50u")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_753dr"]
+texture = ExtResource("10_753dr")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ris7f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nk8bl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m3v74"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_esh3y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0kwkt"]
+
 [resource]
 Button/font_sizes/font_size = 96
-Button/fonts/font = ExtResource("1_lu4qx")
+Button/fonts/font = ExtResource("1_ge50u")
 Button/styles/disabled = ExtResource("2_0jdgo")
 Button/styles/disabled_mirrored = ExtResource("2_0jdgo")
 Button/styles/focus = ExtResource("3_nb8qc")
@@ -30,36 +55,70 @@ Button/styles/normal = ExtResource("3_q0mpj")
 Button/styles/normal_mirrored = ExtResource("3_q0mpj")
 Button/styles/pressed = ExtResource("5_nb8qc")
 Button/styles/pressed_mirrored = ExtResource("5_nb8qc")
-Gap1/base_type = &"HSeparator"
-Gap1/constants/separation = 16
-Gap1/styles/separator = SubResource("StyleBoxEmpty_lu4qx")
-Gap2/base_type = &"HSeparator"
-Gap2/constants/separation = 24
-Gap2/styles/separator = SubResource("StyleBoxEmpty_ge50u")
-Gap3/base_type = &"HSeparator"
-Gap3/constants/separation = 32
-Gap3/styles/separator = SubResource("StyleBoxEmpty_joelb")
-Gap4/base_type = &"HSeparator"
-Gap4/constants/separation = 48
-Gap4/styles/separator = SubResource("StyleBoxEmpty_753dr")
-Gap5/base_type = &"HSeparator"
-Gap5/constants/separation = 64
-Gap5/styles/separator = SubResource("StyleBoxEmpty_g4smm")
+HGap1/base_type = &"HSeparator"
+HGap1/constants/separation = 16
+HGap1/styles/separator = null
+HGap2/base_type = &"HSeparator"
+HGap2/constants/separation = 24
+HGap2/styles/separator = SubResource("StyleBoxEmpty_ge50u")
+HGap3/base_type = &"HSeparator"
+HGap3/constants/separation = 32
+HGap3/styles/separator = SubResource("StyleBoxEmpty_joelb")
+HGap4/base_type = &"HSeparator"
+HGap4/constants/separation = 48
+HGap4/styles/separator = SubResource("StyleBoxEmpty_753dr")
+HGap5/base_type = &"HSeparator"
+HGap5/constants/separation = 64
+HGap5/styles/separator = SubResource("StyleBoxEmpty_g4smm")
+HSeparator/constants/separation = 0
+HSeparator/styles/separator = null
 HeaderLarge/font_sizes/font_size = 80
-HeaderLarge/fonts/font = ExtResource("6_ge50u")
+HeaderLarge/fonts/font = ExtResource("6_joelb")
 HeaderMedium/font_sizes/font_size = 64
-HeaderMedium/fonts/font = ExtResource("6_ge50u")
+HeaderMedium/fonts/font = ExtResource("6_joelb")
 HeaderSmall/font_sizes/font_size = 32
-HeaderSmall/fonts/font = ExtResource("7_joelb")
+HeaderSmall/fonts/font = ExtResource("1_ge50u")
+InputFieldPanelContainer/base_type = &"PanelContainer"
+InputFieldPanelContainer/styles/panel = SubResource("StyleBoxTexture_joelb")
 Label/font_sizes/font_size = 32
-Label/fonts/font = ExtResource("1_lu4qx")
+Label/fonts/font = ExtResource("8_g4smm")
 MainButton/base_type = &"Label"
 MainButton/font_sizes/font_size = 128
-MainButton/fonts/font = ExtResource("6_ge50u")
+MainButton/fonts/font = ExtResource("6_joelb")
 MainMarginContainer/base_type = &"MarginContainer"
 MainMarginContainer/constants/margin_bottom = 80
 MainMarginContainer/constants/margin_left = 48
 MainMarginContainer/constants/margin_right = 48
 MainMarginContainer/constants/margin_top = 128
+TextNormal/base_type = &"HeaderSmall"
+TextNormal/font_sizes/font_size = 32
+TextNormal/fonts/font = ExtResource("8_753dr")
+TextboxContainer/base_type = &"PanelContainer"
+TextboxContainer/styles/panel = SubResource("StyleBoxTexture_753dr")
+TextboxMargin/base_type = &"MarginContainer"
+TextboxMargin/constants/margin_bottom = 0
+TextboxMargin/constants/margin_left = 0
+TextboxMargin/constants/margin_right = 0
+TextboxMargin/constants/margin_top = 0
+TextboxPading/base_type = &"MarginContainer"
+TextboxPading/constants/margin_bottom = 2
+TextboxPading/constants/margin_left = 8
+TextboxPading/constants/margin_right = 8
+TextboxPading/constants/margin_top = 2
+VGap1/base_type = &"VSeparator"
+VGap1/constants/separation = 16
+VGap1/styles/separator = SubResource("StyleBoxEmpty_ris7f")
+VGap2/base_type = &"VSeparator"
+VGap2/constants/separation = 24
+VGap2/styles/separator = SubResource("StyleBoxEmpty_nk8bl")
+VGap3/base_type = &"VSeparator"
+VGap3/constants/separation = 32
+VGap3/styles/separator = SubResource("StyleBoxEmpty_m3v74")
+VGap4/base_type = &"VSeparator"
+VGap4/constants/separation = 48
+VGap4/styles/separator = SubResource("StyleBoxEmpty_esh3y")
+VGap5/base_type = &"VSeparator"
+VGap5/constants/separation = 64
+VGap5/styles/separator = SubResource("StyleBoxEmpty_0kwkt")
 button_main_border/base_type = &"Panel"
 button_main_border/styles/panel = ExtResource("4_nb8qc")

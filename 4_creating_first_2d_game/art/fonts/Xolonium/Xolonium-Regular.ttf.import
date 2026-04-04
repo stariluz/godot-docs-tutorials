@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://2li4c4tkybh0"
-path="res://.godot/imported/Allan-Bold.ttf-6e9965bfdd0ff78edc44a4c43eb351a7.fontdata"
+uid="uid://btdlv4mqi82sc"
+path="res://.godot/imported/Xolonium-Regular.ttf-6b84a6e4d4e16a2a2a9d8a6b1555afd4.fontdata"
 
 [deps]
 
-source_file="res://4_creating_first_2d_game/fonts/Allan/Allan-Bold.ttf"
-dest_files=["res://.godot/imported/Allan-Bold.ttf-6e9965bfdd0ff78edc44a4c43eb351a7.fontdata"]
+source_file="res://4_creating_first_2d_game/art/fonts/Xolonium/Xolonium-Regular.ttf"
+dest_files=["res://.godot/imported/Xolonium-Regular.ttf-6b84a6e4d4e16a2a2a9d8a6b1555afd4.fontdata"]
 
 [params]
 

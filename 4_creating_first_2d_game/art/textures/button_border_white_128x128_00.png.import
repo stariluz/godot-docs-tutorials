@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drh85opbt87h2"
-path="res://.godot/imported/Icon432x432_monochrome.png-17cdbcb4131aafec3b6dfad76f4e970a.ctex"
+uid="uid://b4qu6scikqwco"
+path="res://.godot/imported/button_border_white_128x128_00.png-bba681094245f9c7f5d9d199a73771c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://4_creating_first_2d_game/art/icons/Icon432x432_monochrome.png"
-dest_files=["res://.godot/imported/Icon432x432_monochrome.png-17cdbcb4131aafec3b6dfad76f4e970a.ctex"]
+source_file="res://4_creating_first_2d_game/art/textures/button_border_white_128x128_00.png"
+dest_files=["res://.godot/imported/button_border_white_128x128_00.png-bba681094245f9c7f5d9d199a73771c4.ctex"]
 
 [params]
 

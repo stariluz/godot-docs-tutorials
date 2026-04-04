@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxapmqp6u3oqw"
-path="res://.godot/imported/button_main_128x128_01.png-31c8ab3860f55ef9c7ba7451896278c3.ctex"
+uid="uid://dr47chegnsmke"
+path="res://.godot/imported/textbox_background_01_128x128.png-4d5d9db85937909a4fce10d40bb22bc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://4_creating_first_2d_game/art/ui/button_main_128x128_01.png"
-dest_files=["res://.godot/imported/button_main_128x128_01.png-31c8ab3860f55ef9c7ba7451896278c3.ctex"]
+source_file="res://4_creating_first_2d_game/art/textures/textbox_background_01_128x128.png"
+dest_files=["res://.godot/imported/textbox_background_01_128x128.png-4d5d9db85937909a4fce10d40bb22bc1.ctex"]
 
 [params]
 

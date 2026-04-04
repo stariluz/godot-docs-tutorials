@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://ciiwuacp6ukqi"
-path="res://.godot/imported/Allan-Regular.ttf-b5fc8647c8c8e0899f58c979df9a3a2c.fontdata"
+path="res://.godot/imported/Allan-Regular.ttf-5164546b4364b8a6b7435f2645082049.fontdata"
 
 [deps]
 
-source_file="res://4_creating_first_2d_game/fonts/Allan/Allan-Regular.ttf"
-dest_files=["res://.godot/imported/Allan-Regular.ttf-b5fc8647c8c8e0899f58c979df9a3a2c.fontdata"]
+source_file="res://4_creating_first_2d_game/art/fonts/Allan/Allan-Regular.ttf"
+dest_files=["res://.godot/imported/Allan-Regular.ttf-5164546b4364b8a6b7435f2645082049.fontdata"]
 
 [params]
 

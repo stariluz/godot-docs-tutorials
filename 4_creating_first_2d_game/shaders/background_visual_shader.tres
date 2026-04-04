@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" format=3 uid="uid://b16rue0akmcx1"]
+[gd_resource type="VisualShader" load_steps=126 format=3 uid="uid://b16rue0akmcx1"]
 
 [ext_resource type="Texture2D" uid="uid://byfsbklwbnenr" path="res://4_creating_first_2d_game/art/bg/bg1080x2400_background.png" id="1_4wdjf"]
 
@@ -625,22 +625,22 @@ linked_parent_graph_frame = 86
 input_name = "time"
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_n2pq1"]
-size = Vector2(1993, 991.00006)
+size = Vector2(1992, 1005)
 title = "Pattern 1"
 attached_nodes = PackedInt32Array(2, 74, 27, 11, 10, 9, 8, 7, 6, 5, 3)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_6qiyg"]
-size = Vector2(1973.0001, 1011.00006)
+size = Vector2(1972, 1025)
 title = "Pattern 2"
 attached_nodes = PackedInt32Array(25, 73, 16, 26, 24, 22, 21, 20, 19, 18, 17)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_m0nfc"]
-size = Vector2(1973.0001, 1011.00006)
+size = Vector2(1972, 1025)
 title = "Pattern 3"
 attached_nodes = PackedInt32Array(37, 72, 46, 45, 44, 43, 42, 41, 40, 39, 38)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_14kdc"]
-size = Vector2(1973.0001, 1031)
+size = Vector2(1972, 1045)
 title = "Pattern 4"
 attached_nodes = PackedInt32Array(58, 71, 48, 56, 55, 54, 53, 52, 51, 50, 49)
 
@@ -649,11 +649,474 @@ linked_parent_graph_frame = 86
 input_name = "uv"
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_yc27y"]
-size = Vector2(2033.0001, 1051)
+size = Vector2(2032, 1065)
 title = "Pattern 5"
 attached_nodes = PackedInt32Array(67, 64, 61, 65, 62, 60, 66, 68, 59, 63, 70)
 
 [resource]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform float peakDuration = 4.0;
+uniform float timeScale = 2.0;
+uniform float transitionDuration = 1.0;
+uniform int totalPatterns : hint_range(0, 24, 4) = 24;
+uniform vec2 direction1 = vec2(0.000000, 1.000000);
+uniform float velocity1 = 1.5;
+uniform sampler2D pattern1 : hint_default_transparent, repeat_enable;
+uniform vec2 direction5 = vec2(-0.500000, 0.500000);
+uniform float velocity5 = 1.20000004768372;
+uniform sampler2D pattern5 : hint_default_transparent, repeat_enable;
+uniform vec2 direction4 = vec2(0.200000, 1.000000);
+uniform float velocity4 = 0.5;
+uniform sampler2D pattern4 : hint_default_transparent, repeat_enable;
+uniform vec2 direction3 = vec2(-1.000000, 1.000000);
+uniform float velocity3 = 1.5;
+uniform sampler2D pattern3 : hint_default_transparent, repeat_enable;
+uniform vec2 direction2 = vec2(-1.000000, 0.000000);
+uniform float velocity2 = 0.80000001192093;
+uniform sampler2D pattern2 : hint_default_transparent, repeat_enable;
+
+
+
+void fragment() {
+// Vector2Parameter:3
+	vec2 n_out3p0 = direction1;
+
+
+// VectorFunc:74
+	vec2 n_out74p0 = normalize(n_out3p0);
+
+
+// FloatParameter:6
+	float n_out6p0 = velocity1;
+
+
+// FloatOp:27
+	float n_in27p1 = 0.10000;
+	float n_out27p0 = n_out6p0 * n_in27p1;
+
+
+// Input:8
+	float n_out8p0 = TIME;
+
+
+// FloatOp:5
+	float n_out5p0 = n_out27p0 * n_out8p0;
+
+
+// VectorOp:11
+	vec2 n_out11p0 = n_out74p0 * vec2(n_out5p0);
+
+
+// Input:9
+	vec2 n_out9p0 = UV;
+
+
+// VectorOp:7
+	vec3 n_out7p0 = vec3(n_out11p0, 0.0) + vec3(n_out9p0, 0.0);
+
+
+	vec4 n_out2p0;
+// Texture2D:2
+	n_out2p0 = texture(pattern1, vec2(n_out7p0.xy));
+
+
+// Vector2Parameter:67
+	vec2 n_out67p0 = direction5;
+
+
+// VectorFunc:70
+	vec2 n_out70p0 = normalize(n_out67p0);
+
+
+// FloatParameter:64
+	float n_out64p0 = velocity5;
+
+
+// FloatOp:62
+	float n_in62p1 = 0.10000;
+	float n_out62p0 = n_out64p0 * n_in62p1;
+
+
+// Input:61
+	float n_out61p0 = TIME;
+
+
+// FloatOp:63
+	float n_out63p0 = n_out62p0 * n_out61p0;
+
+
+// VectorOp:59
+	vec2 n_out59p0 = n_out70p0 * vec2(n_out63p0);
+
+
+// Input:60
+	vec2 n_out60p0 = UV;
+
+
+// VectorOp:66
+	vec3 n_out66p0 = vec3(n_out59p0, 0.0) + vec3(n_out60p0, 0.0);
+
+
+	vec4 n_out68p0;
+// Texture2D:68
+	n_out68p0 = texture(pattern5, vec2(n_out66p0.xy));
+	float n_out68p4 = n_out68p0.a;
+
+
+// Vector2Parameter:58
+	vec2 n_out58p0 = direction4;
+
+
+// VectorFunc:71
+	vec2 n_out71p0 = normalize(n_out58p0);
+
+
+// FloatParameter:53
+	float n_out53p0 = velocity4;
+
+
+// FloatOp:51
+	float n_in51p1 = 0.10000;
+	float n_out51p0 = n_out53p0 * n_in51p1;
+
+
+// Input:50
+	float n_out50p0 = TIME;
+
+
+// FloatOp:52
+	float n_out52p0 = n_out51p0 * n_out50p0;
+
+
+// VectorOp:48
+	vec2 n_out48p0 = n_out71p0 * vec2(n_out52p0);
+
+
+// Input:49
+	vec2 n_out49p0 = UV;
+
+
+// VectorOp:55
+	vec3 n_out55p0 = vec3(n_out48p0, 0.0) + vec3(n_out49p0, 0.0);
+
+
+	vec4 n_out56p0;
+// Texture2D:56
+	n_out56p0 = texture(pattern4, vec2(n_out55p0.xy));
+	float n_out56p4 = n_out56p0.a;
+
+
+// Mix:175
+	vec4 n_out175p0 = mix(n_out68p0, n_out56p0, vec4(n_out56p4));
+	float n_out175p4 = n_out175p0.a;
+
+
+// Vector2Parameter:46
+	vec2 n_out46p0 = direction3;
+
+
+// VectorFunc:72
+	vec2 n_out72p0 = normalize(n_out46p0);
+
+
+// FloatParameter:40
+	float n_out40p0 = velocity3;
+
+
+// FloatOp:43
+	float n_in43p1 = 0.10000;
+	float n_out43p0 = n_out40p0 * n_in43p1;
+
+
+// Input:39
+	float n_out39p0 = TIME;
+
+
+// FloatOp:37
+	float n_out37p0 = n_out43p0 * n_out39p0;
+
+
+// VectorOp:41
+	vec2 n_out41p0 = n_out72p0 * vec2(n_out37p0);
+
+
+// Input:38
+	vec2 n_out38p0 = UV;
+
+
+// VectorOp:44
+	vec3 n_out44p0 = vec3(n_out41p0, 0.0) + vec3(n_out38p0, 0.0);
+
+
+	vec4 n_out45p0;
+// Texture2D:45
+	n_out45p0 = texture(pattern3, vec2(n_out44p0.xy));
+	float n_out45p4 = n_out45p0.a;
+
+
+// Vector2Parameter:20
+	vec2 n_out20p0 = direction2;
+
+
+// VectorFunc:73
+	vec2 n_out73p0 = normalize(n_out20p0);
+
+
+// FloatParameter:19
+	float n_out19p0 = velocity2;
+
+
+// FloatOp:26
+	float n_in26p1 = 0.10000;
+	float n_out26p0 = n_out19p0 * n_in26p1;
+
+
+// Input:18
+	float n_out18p0 = TIME;
+
+
+// FloatOp:16
+	float n_out16p0 = n_out26p0 * n_out18p0;
+
+
+// VectorOp:21
+	vec2 n_out21p0 = n_out73p0 * vec2(n_out16p0);
+
+
+// Input:17
+	vec2 n_out17p0 = UV;
+
+
+// VectorOp:22
+	vec2 n_out22p0 = n_out21p0 + n_out17p0;
+
+
+	vec4 n_out24p0;
+// Texture2D:24
+	n_out24p0 = texture(pattern2, n_out22p0);
+	float n_out24p4 = n_out24p0.a;
+
+
+// Mix:167
+	vec4 n_out167p0 = mix(n_out45p0, n_out24p0, vec4(n_out24p4));
+	float n_out167p4 = n_out167p0.a;
+
+
+// Mix:179
+	vec4 n_out179p0 = mix(n_out175p0, n_out167p0, vec4(n_out167p4));
+
+
+// Mix:170
+	vec4 n_out170p0 = mix(n_out24p0, n_out45p0, vec4(n_out45p4));
+	float n_out170p4 = n_out170p0.a;
+
+
+// Mix:185
+	vec4 n_out185p0 = mix(n_out175p0, n_out170p0, vec4(n_out170p4));
+
+
+// Mix:171
+	vec4 n_out171p0 = mix(n_out68p0, n_out45p0, vec4(n_out45p4));
+	float n_out171p4 = n_out171p0.a;
+
+
+// Mix:173
+	vec4 n_out173p0 = mix(n_out24p0, n_out56p0, vec4(n_out56p4));
+	float n_out173p4 = n_out173p0.a;
+
+
+// Mix:191
+	vec4 n_out191p0 = mix(n_out171p0, n_out173p0, vec4(n_out173p4));
+
+
+// Mix:172
+	vec4 n_out172p0 = mix(n_out56p0, n_out45p0, vec4(n_out45p4));
+	float n_out172p4 = n_out172p0.a;
+
+
+// Mix:176
+	vec4 n_out176p0 = mix(n_out24p0, n_out68p0, vec4(n_out68p4));
+	float n_out176p4 = n_out176p0.a;
+
+
+// Mix:197
+	vec4 n_out197p0 = mix(n_out172p0, n_out176p0, vec4(n_out176p4));
+
+
+// Mix:178
+	vec4 n_out178p0 = mix(n_out56p0, n_out68p0, vec4(n_out68p4));
+	float n_out178p4 = n_out178p0.a;
+
+
+// Mix:180
+	vec4 n_out180p0 = mix(n_out178p0, n_out167p0, vec4(n_out167p4));
+
+
+// Mix:186
+	vec4 n_out186p0 = mix(n_out178p0, n_out170p0, vec4(n_out170p4));
+
+
+// Mix:177
+	vec4 n_out177p0 = mix(n_out45p0, n_out68p0, vec4(n_out68p4));
+	float n_out177p4 = n_out177p0.a;
+
+
+// Mix:192
+	vec4 n_out192p0 = mix(n_out177p0, n_out173p0, vec4(n_out173p4));
+
+
+// Mix:174
+	vec4 n_out174p0 = mix(n_out45p0, n_out56p0, vec4(n_out56p4));
+	float n_out174p4 = n_out174p0.a;
+
+
+// Mix:198
+	vec4 n_out198p0 = mix(n_out174p0, n_out176p0, vec4(n_out176p4));
+
+
+// Mix:168
+	vec4 n_out168p0 = mix(n_out56p0, n_out24p0, vec4(n_out24p4));
+	float n_out168p4 = n_out168p0.a;
+
+
+// Mix:181
+	vec4 n_out181p0 = mix(n_out171p0, n_out168p0, vec4(n_out168p4));
+
+
+// Mix:169
+	vec4 n_out169p0 = mix(n_out68p0, n_out24p0, vec4(n_out24p4));
+	float n_out169p4 = n_out169p0.a;
+
+
+// Mix:187
+	vec4 n_out187p0 = mix(n_out169p0, n_out172p0, vec4(n_out172p4));
+
+
+// Mix:193
+	vec4 n_out193p0 = mix(n_out169p0, n_out174p0, vec4(n_out174p4));
+
+
+// Mix:199
+	vec4 n_out199p0 = mix(n_out168p0, n_out177p0, vec4(n_out177p4));
+
+
+// Mix:182
+	vec4 n_out182p0 = mix(n_out177p0, n_out168p0, vec4(n_out168p4));
+
+
+// Mix:188
+	vec4 n_out188p0 = mix(n_out176p0, n_out172p0, vec4(n_out172p4));
+
+
+// Mix:194
+	vec4 n_out194p0 = mix(n_out176p0, n_out174p0, vec4(n_out174p4));
+
+
+// Mix:200
+	vec4 n_out200p0 = mix(n_out173p0, n_out177p0, vec4(n_out177p4));
+
+
+// Mix:184
+	vec4 n_out184p0 = mix(n_out172p0, n_out169p0, vec4(n_out169p4));
+
+
+// Mix:190
+	vec4 n_out190p0 = mix(n_out168p0, n_out171p0, vec4(n_out171p4));
+
+
+// Mix:195
+	vec4 n_out195p0 = mix(n_out167p0, n_out175p0, vec4(n_out175p4));
+
+
+// Mix:201
+	vec4 n_out201p0 = mix(n_out167p0, n_out178p0, vec4(n_out178p4));
+
+
+// Mix:183
+	vec4 n_out183p0 = mix(n_out174p0, n_out169p0, vec4(n_out169p4));
+
+
+// Mix:189
+	vec4 n_out189p0 = mix(n_out173p0, n_out171p0, vec4(n_out171p4));
+
+
+// Mix:196
+	vec4 n_out196p0 = mix(n_out170p0, n_out175p0, vec4(n_out175p4));
+
+
+// Mix:202
+	vec4 n_out202p0 = mix(n_out170p0, n_out178p0, vec4(n_out178p4));
+
+
+// FloatParameter:213
+	float n_out213p0 = peakDuration;
+
+
+// FloatParameter:261
+	float n_out261p0 = transitionDuration;
+
+
+// IntParameter:293
+	int n_out293p0 = totalPatterns;
+
+
+// FloatParameter:260
+	float n_out260p0 = timeScale;
+
+
+	vec4 n_out216p0;
+	float n_out216p1;
+// Expression:216
+	n_out216p0 = vec4(0.0, 0.0, 0.0, 0.0);
+	n_out216p1 = 0.0;
+	{
+		float _peakTotalDurationScaled=n_out260p0*(n_out213p0 + 2.0*n_out261p0);
+		float _h=1.0 + n_out213p0/(2.0*n_out261p0);
+		float _totalPatternsScaled=float(n_out293p0)*n_out260p0*(n_out213p0+n_out261p0);
+		vec4 acc=vec4(0.0);
+		float x=TIME;
+		vec4 patterns[24] = vec4[24](
+		n_out179p0,n_out185p0,n_out191p0,n_out197p0,n_out180p0,n_out186p0,n_out192p0,n_out198p0,
+		n_out181p0,n_out187p0,n_out193p0,n_out199p0,n_out182p0,n_out188p0,n_out194p0,n_out200p0,
+		n_out184p0,n_out190p0,n_out195p0,n_out201p0,n_out183p0,n_out189p0,n_out196p0,n_out202p0
+		);
+		
+		float random=fract(sin(x * 12.9898) * 43758.5453);
+		int r=int(random * 24.0);
+			
+		for (int i = 0; i < n_out293p0; i++) {
+			vec4 pattern = patterns[i];
+			float dt = float(i)*n_out260p0*(n_out213p0 + n_out261p0) - n_out261p0*n_out260p0;
+			float lt = (x-dt)/_peakTotalDurationScaled;
+			
+			float spike=abs(2.0*(lt - floor(lt + 0.5)))*_h;
+			float clampSpike = clamp(spike, 0.0, 1);
+			
+		    float tMod = mod(x-dt,_totalPatternsScaled)/_peakTotalDurationScaled;
+			float active=(tMod < 1.0)? 1.0 : 0.0;
+			
+		    float f = clampSpike*active;
+		
+		    acc += f * pattern;
+		}
+		
+		n_out216p0 = acc;
+		n_out216p1 = n_out216p0.a;
+	}
+
+
+// Mix:69
+	vec3 n_out69p0 = mix(vec3(n_out2p0.xyz), vec3(n_out216p0.xyz), vec3(n_out216p1));
+
+
+// Output:0
+	COLOR.rgb = n_out69p0;
+
+
+}
+"
 mode = 1
 flags/light_only = false
 preview_params/pattern2 = "Resource(\"uid://b4cyqujuhit1u\", \"res://4_creating_first_2d_game/art/bg/bg1080x2400_anim3_vertical.png\")"

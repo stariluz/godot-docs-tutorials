@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" format=3 uid="uid://desfsoanw1tfu"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://desfsoanw1tfu"]
 
 [ext_resource type="Shader" uid="uid://cuofdwgdhldo3" path="res://4_creating_first_2d_game/shaders/text/text_noisy_border.gdshader" id="1_4fwdq"]
 

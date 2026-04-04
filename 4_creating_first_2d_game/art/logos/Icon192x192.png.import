@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rgsnquq0c7v8"
-path="res://.godot/imported/Logo Godot.png-e5d8d20b1f1c70ada4adeac1ab99b51c.ctex"
+uid="uid://c8ybp4soplnni"
+path="res://.godot/imported/Icon192x192.png-8ff7f17260231e5a72a850f450a661c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://4_creating_first_2d_game/art/icons/Logo Godot.png"
-dest_files=["res://.godot/imported/Logo Godot.png-e5d8d20b1f1c70ada4adeac1ab99b51c.ctex"]
+source_file="res://4_creating_first_2d_game/art/logos/Icon192x192.png"
+dest_files=["res://.godot/imported/Icon192x192.png-8ff7f17260231e5a72a850f450a661c6.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blc55edc82jo6"
-path="res://.godot/imported/button_border_white_128x128_01.png-063e8eb390df812025cab4398ba2604c.ctex"
+uid="uid://oxmrqn5ma2pn"
+path="res://.godot/imported/input_field_background_01_128x128.png-0ef47e8658f8729749c4e51ea24b54ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://4_creating_first_2d_game/art/ui/button_border_white_128x128_01.png"
-dest_files=["res://.godot/imported/button_border_white_128x128_01.png-063e8eb390df812025cab4398ba2604c.ctex"]
+source_file="res://4_creating_first_2d_game/art/textures/input_field_background_01_128x128.png"
+dest_files=["res://.godot/imported/input_field_background_01_128x128.png-0ef47e8658f8729749c4e51ea24b54ad.ctex"]
 
 [params]
 
